@@ -1,0 +1,12 @@
+services:
+    main:
+        port: 8000
+        threads_nb: 2
+    service1:
+        port: 8001
+        threads_nb: 2
+        url: http://localhost:8001/
+    service2:
+        port: 8002
+        threads_nb: 2
+        url: http://localhost:8002/
