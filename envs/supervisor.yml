@@ -1,0 +1,7 @@
+name: supervisor
+dependencies:
+- nomkl
+- python=2.7
+- supervisor
+- flake8
+
