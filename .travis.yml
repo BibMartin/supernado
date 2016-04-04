@@ -11,5 +11,6 @@ before_install:
     - source activate supervisor
 
 script:
+    - bash test.sh
     - find . -type f -name "*.py" ! -name 'conf.py' | xargs flake8 --max-line-length=100
 
