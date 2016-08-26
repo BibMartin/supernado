@@ -16,7 +16,7 @@ class SomeHandler(web.RequestHandler):
             "You've asked for uri {}\n".format(service_name, param))
 
 app = web.Application([
-    ("/(.*)", QueryHandler),
+    ("/(.*)", SomeHandler),
     ])
 
 server = httpserver.HTTPServer(app)
