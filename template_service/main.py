@@ -4,7 +4,7 @@ from tornado import ioloop, web, httpserver
 
 service_name = os.path.dirname(__file__).split('/')[-1]
 service_path = os.path.abspath(os.path.dirname(__file__))
-conf = yaml.load(open(os.path.join(service_path, 'config.yml')))
+conf = yaml.load(open(os.path.join(service_path, '_config.yml')))
 
 assert conf is not None
 
