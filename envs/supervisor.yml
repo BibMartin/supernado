@@ -4,4 +4,4 @@ dependencies:
 - python=2.7
 - supervisor
 - flake8
-
+- pytest=2.9
