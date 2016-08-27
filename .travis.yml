@@ -12,10 +12,11 @@ before_install:
     - source activate supervisor
 
 script:
+    - rm -rf services/test
+    - cp -R template_service services/test
     - supervisord
     - supervisorctl start all
     - supervisorctl restart all
-    - curl http://localhost:8000/service1/foo
+    - curl http://localhost:8001/test/foo
     - supervisorctl shutdown
     - find . -type f -name "*.py" ! -name 'conf.py' | xargs flake8 --max-line-length=100
-
