@@ -13,6 +13,7 @@ before_install:
 
 script:
     - rm -rf services/test
+    - mkdir services/test
     - cp -R template_service services/test
     - supervisord
     - supervisorctl start all
