@@ -9,14 +9,13 @@ before_install:
     - conda update --yes --all
     - travis_retry conda env create -f envs/supervisor.yml
     - travis_retry conda env create -f envs/py35.yml
+    - bash installService.sh template
     - source activate supervisor
-    - cp -R template_service services/test
 
 script:
-    - rm -rf services/test
     - supervisord
     - supervisorctl start all
     - supervisorctl restart all
-    - curl http://localhost:8001/test/foo
+    - curl http://localhost:8001/template/foo
     - supervisorctl shutdown
     - find . -type f -name "*.py" ! -name 'conf.py' | xargs flake8 --max-line-length=100
