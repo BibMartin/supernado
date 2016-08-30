@@ -7,8 +7,7 @@ before_install:
     - bash miniconda.sh -b -p $HOME/miniconda
     - export PATH="$HOME/miniconda/bin:$PATH"
     - conda update --yes --all
-    - travis_retry conda env create -f envs/supervisor.yml
-    - travis_retry conda env create -f envs/py35.yml
+    - travis_retry conda env create -f supervisor.yml
     - bash installService.sh template
     - source activate supervisor
 
