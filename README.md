@@ -84,4 +84,4 @@ It's running:
 
     curl http://localhost:8002foo/bar
 
-    > Hello form service myOwnService. You've asked for uri foo/bar
+    > Hello fomr service myOwnService. You've asked for uri foo/bar
