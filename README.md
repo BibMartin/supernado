@@ -51,7 +51,7 @@ You can test your service with:
 
     curl http://localhost:8001/foo/bar
 
-    > Hello form service template. You've asked for uri foo/bar
+    > Hello from service template. You've asked for uri foo/bar
 
 ## Create a new service
 
@@ -82,6 +82,6 @@ It's running:
     > myOwnService                     RUNNING   pid 13375, uptime 0:03:05
     > template                         RUNNING   pid 13374, uptime 0:03:05
 
-    curl http://localhost:8002foo/bar
+    curl http://localhost:8002/foo/bar
 
-    > Hello fomr service myOwnService. You've asked for uri foo/bar
+    > Hello from service myOwnService. You've asked for uri foo/bar
