@@ -12,7 +12,7 @@ assert conf is not None
 class SomeHandler(web.RequestHandler):
     def get(self, param=''):
         self.write(
-            "Hello form service {}. "
+            "Hello from service {}. "
             "You've asked for uri {}\n".format(service_name, param))
 
 app = web.Application([
