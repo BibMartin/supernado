@@ -3,19 +3,20 @@ import os
 from tornado import ioloop, web, httpserver
 
 service_name = os.path.dirname(__file__).split('/')[-1]
-root_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
-config = yaml.load(open(os.path.join(root_path, 'config.yml')))
+service_path = os.path.abspath(os.path.dirname(__file__))
+conf = yaml.load(open(os.path.join(service_path, '_config.yml')))
 
-conf = config['services'].get(service_name, None)
 assert conf is not None
 
 
-class QueryHandler(web.RequestHandler):
+class SomeHandler(web.RequestHandler):
     def get(self, param=''):
-        self.write("service1: {}\n".format(param))
+        self.write(
+            "Hello form service {}. "
+            "You've asked for uri {}\n".format(service_name, param))
 
 app = web.Application([
-    ("/(.*)", QueryHandler),
+    ("/(.*)", SomeHandler),
     ])
 
 server = httpserver.HTTPServer(app)

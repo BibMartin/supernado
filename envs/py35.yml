@@ -1,6 +1,0 @@
-name: py35
-dependencies:
-- nomkl
-- python=3.5
-- tornado
-- pyyaml
