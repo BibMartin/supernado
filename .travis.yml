@@ -8,6 +8,8 @@ before_install:
     - export PATH="$HOME/miniconda/bin:$PATH"
     - conda update --yes --all
     - travis_retry conda env create -f supervisor.yml
+    - mkdir services
+    - cp -R template_service services/template
     - bash installService.sh template
     - source activate supervisor
 

@@ -33,8 +33,17 @@ Now create the conda *virtual* environment for supervisor:
 
     conda env create -f supervisor.yml
 
-Install your first service:
+Create the folder `services` of link to somewhere on the disk:
 
+    mkdir services
+
+Or
+
+    ln -s /some/path/to/services services
+
+Create and install your first service:
+
+    cp -R template_service ./services/template
     ./installService.sh template
 
 Run supervisor and your service:

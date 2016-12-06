@@ -20,6 +20,6 @@ app = web.Application([
     ])
 
 server = httpserver.HTTPServer(app)
-server.bind(conf['port'])
+server.bind(conf['port'], address='0.0.0.0')
 server.start(conf['threads_nb'])
 ioloop.IOLoop.current().start()
